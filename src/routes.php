@@ -1,3 +1,3 @@
 <?php
 
-Route::get('sitemap', 'SitemapController@index')->name('sitemap');
+Route::get('sitemap', 'Djmitry\Sitemap\SitemapController@index')->name('sitemap');
