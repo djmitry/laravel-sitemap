@@ -12,13 +12,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Djmitry\\Meta\\": "src"
+            "Djmitry\\Sitemap\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Djmitry\\Meta\\MetaServiceProvider"
+                "Djmitry\\Sitemap\\SitemapServiceProvider"
             ]
         }
     }
