@@ -8,6 +8,12 @@ class SitemapController extends Controller
 {
     public function index()
     {
-        echo 1;
+        $urls = [
+            'one',
+            'punch',
+            'man',
+        ];
+
+        return response()->view('sitemap', compact('urls'))->header('Content-type', 'text/xml');
     }
 }
