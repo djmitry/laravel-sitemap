@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class SitemapController extends Controller
 {
-    public function index()
+    public function __construct(array $data)
     {
         $urls = [
             'one',
@@ -14,6 +14,6 @@ class SitemapController extends Controller
             'man',
         ];
 
-        return response()->view('sitemap', compact('urls'))->header('Content-type', 'text/xml');
+        return response()->view('Sitemap::sitemap', compact('urls'))->header('Content-Type', 'text/xml');
     }
 }
