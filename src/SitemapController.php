@@ -6,13 +6,21 @@ use App\Http\Controllers\Controller;
 
 class SitemapController extends Controller
 {
-    public function __construct(array $data)
+    public function index()
     {
-        $urls = [
-            'one',
-            'punch',
-            'man',
-        ];
+        $urls = [];
+        $config = config('sitemap');
+        foreach ($config as $name) {
+            $models = $name::all();
+            foreach ($models as $model) {
+                if (method_exists($model, 'url')) {
+                    // TODO:
+                    $urls[] = $model->url();
+                } else {
+                    $urls[] = url($model->slug);
+                }
+            }
+        }
 
         return response()->view('Sitemap::sitemap', compact('urls'))->header('Content-Type', 'text/xml');
     }

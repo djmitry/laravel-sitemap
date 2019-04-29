@@ -2,5 +2,5 @@
 
 return [
     // Пример
-    //'App' => App\Models\Article::class,
+    App\Models\Portfolio::class,
 ];
